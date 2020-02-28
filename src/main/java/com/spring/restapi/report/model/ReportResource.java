@@ -2,6 +2,7 @@ package com.spring.restapi.report.model;
 
 import com.spring.restapi.report.controller.ReportController;
 import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.Link;
 import org.springframework.hateoas.LinkRelation;
 import org.springframework.hateoas.server.RepresentationModelProcessor;
 import org.springframework.stereotype.Component;
@@ -20,6 +21,8 @@ public class ReportResource implements RepresentationModelProcessor<EntityModel<
             model.add(linkTo(ReportController.class).slash("gotoTrue").withRel(LinkRelation.of("isAddUrlTrue")));
         else
             model.add(linkTo(ReportController.class).slash("gotoFalse").withRel(LinkRelation.of("isAddUrlFalse")));
+
+        model.add(new Link("/docs/index.html#report-init").withRel("profile"));
 
         return model;
     }
