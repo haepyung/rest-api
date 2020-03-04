@@ -19,4 +19,14 @@ public class ReportController {
         EntityModel<Report> em = new EntityModel<>(Report.builder().userId(userId).isAddUrl(false).build());
         return ResponseEntity.ok(em);
     }
+
+
+    @GetMapping("/{channel}/{userId}")
+    public ResponseEntity<?> reportToExcel(@PathVariable String channel, @PathVariable String userId)
+    {
+        //TODO channel 은 mail, sms, alim, asp, api, all
+
+        EntityModel<Report> em = new EntityModel<>(Report.builder().userId(userId).isAddUrl(false).build());
+        return ResponseEntity.ok(em);
+    }
 }

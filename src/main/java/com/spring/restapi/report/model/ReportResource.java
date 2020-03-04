@@ -16,11 +16,11 @@ public class ReportResource implements RepresentationModelProcessor<EntityModel<
     public EntityModel<Report> process(EntityModel<Report> model) {
 
         model.add(linkTo(ReportController.class).withSelfRel());
-
+        //3
         if (model.getContent().isAddUrl())
-            model.add(linkTo(ReportController.class).slash("gotoTrue").withRel(LinkRelation.of("isAddUrlTrue")));
+            model.add(linkTo(ReportController.class).slash("gotoTrue").withRel(LinkRelation.of("isAddUrlTrue"))); //2
         else
-            model.add(linkTo(ReportController.class).slash("gotoFalse").withRel(LinkRelation.of("isAddUrlFalse")));
+            model.add(linkTo(ReportController.class).slash("gotoFalse").withRel(LinkRelation.of("isAddUrlFalse"))); //4
 
         model.add(new Link("/docs/index.html#report-init").withRel("profile"));
 

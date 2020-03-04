@@ -27,7 +27,8 @@ public class ReportControllerTest extends BaseControllerTest {
                .andExpect(status().isOk())
                .andDo(document("report-init",
                        links(linkWithRel("self").description("link to self"),
-                               linkWithRel("isAddUrlFalse").description("link to isAddUrlFalse")
+                               linkWithRel("isAddUrlFalse").description("link to isAddUrlFalse"),
+                               linkWithRel("profile").description("docs")
                        ),
                        //relaxedRequestFields(fieldWithPath("userId").description("UserId")),
                        relaxedResponseFields(fieldWithPath("userId").description("Report of userId"))
