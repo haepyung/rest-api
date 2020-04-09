@@ -22,7 +22,7 @@ public class ReportResource implements RepresentationModelProcessor<EntityModel<
         else
             model.add(linkTo(ReportController.class).slash("gotoFalse").withRel(LinkRelation.of("isAddUrlFalse"))); //4
 
-        model.add(new Link("/docs/index.html#report-init").withRel("profile"));
+        model.add(new Link("http://localhost:8080/docs/index.html#report-init").withRel("profile"));
 
         return model;
     }
